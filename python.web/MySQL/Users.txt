@@ -1,0 +1,37 @@
+
+#1
+
+INSURT INTO users (first_name,last_name,email) 
+
+VALUES
+
+('kouba', '****', 'kouba.kouba@gmail.com'),
+('youssef', 'krimi', 'youssef.krimi@gmail.com'),
+('med', 'ali', 'med.alo@gmail.com');
+
+
+#2
+SELECT * FROM users;
+
+
+#3
+SELECT * FROM users WHERE email = 'kouba.kouba@gmail.com';
+
+
+
+
+
+#4
+UPDATE users SET last_name = 'amine' WHERE users.id = 3;
+
+
+#5
+DELETE FROM users id = 2;
+
+
+#6
+SELECT * FROM users ORDER BY first_name;
+
+
+#7
+SELECT * FROM users ORDER BY first_name DESC;

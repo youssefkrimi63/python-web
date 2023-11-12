@@ -1,0 +1,42 @@
+SELECT * FROM dojos,ninjas;
+-- Query: Create 3 new dojos
+INSERT INTO dojos (name) VALUES
+('yassin'),
+('krim'),
+('Senda');
+
+DELETE FROM dojos WHERE name =('yassin', 'krim', 'senda');
+
+
+-- Create 3 more dojos
+INSERT INTO dojos (name) VALUES
+('asma'),
+('mouhamed'),
+('kouba');
+
+--  Create 3 ninjas that belong to the first dojo
+INSERT INTO ninjas (first_name, last_name, age , dojo_id) VALUES
+('kouba', 'yyyyy', 20 , 1),
+('med', 'mmm', 20 , 1),
+('youssef', 'yyyyy', 20, 1);
+
+-- Create 3 ninjas that belong to the second dojo
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES
+('amine', 'Mmmm', 35,  2),
+('Hachem', 'Yyyy', 16, 2),
+('Kisame', 'kkkk', 32, 2);
+
+--  Create 3 ninjas that belong to the third dojo
+INSERT INTO ninjas (first_name, last_name, age , dojo_id) VALUES
+('youssef', 'krimi', 18,3),
+('aziz', 'uuuuu', 20, 3),
+('dali', 'yyyyy', 19, 3);
+
+--  Retrieve all the ninjas from the first dojo
+SELECT * FROM ninjas WHERE dojo_id = 1;
+
+-- Query: Retrieve all the ninjas from the last dojo
+SELECT * FROM ninjas WHERE dojo_id = (SELECT MAX(id) FROM dojos);
+
+-- Query: Retrieve the last ninja's dojo
+SELECT * FROM dojos WHERE id = (SELECT MAX(dojo_id) FROM ninjas);
